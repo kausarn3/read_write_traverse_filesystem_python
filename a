@@ -10,6 +10,29 @@ for mylsit in list_j:
     for item in range(0,len(mylsit)):
       if mylsit[item]=="Pages":
           print(mylsit[item+1])
+          
+          
+          
+          
+          
+          
+          
+          import xlrd
+book = xlrd.open_workbook("F:/Files/Leads.xlsx")
+sheet = book.sheet_by_index(0)
+a="Keywords"
+b=3
+r= []
+c= []
+print(sheet.nrows)
+for k in range(0,sheet.nrows):
+    r.append(sheet.row_values(k))
+
+
+for i in r:
+    print(i)
+    print(r[b][i.index(a)])
+        
 
 
 
