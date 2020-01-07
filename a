@@ -1,0 +1,16 @@
+import xlrd as xlrd
+book = xlrd.open_workbook("C:/Users/mdkaushar.nazir/Documents/VDC_Description.xlsx")
+sheet = book.sheet_by_index(0)
+Stringid="ID_00005"
+list_j = []
+for k in range(0,sheet.nrows):
+    list_j.append(sheet.row_values(k))
+
+for mylsit in list_j:
+    for item in range(0,len(mylsit)):
+      if mylsit[item]=="Pages":
+          print(mylsit[item+1])
+
+
+
+
