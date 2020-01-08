@@ -1,39 +1,30 @@
 import xlrd as xlrd
-book = xlrd.open_workbook("C:/Users/mdkaushar.nazir/Documents/VDC_Description.xlsx")
-sheet = book.sheet_by_index(0)
-Stringid="ID_00005"
-list_j = []
+book = xlrd.open_workbook("C:/Users/mdkaushar.nazir/Documents/d.xlsx")
+sheet = book.sheet_by_index(1)
+
+StringId="ID_00013"
+Language="English - United Kingdom"
+
+a=""
+b=""
+
+
+list_r = []
+list_c = []
 for k in range(0,sheet.nrows):
-    list_j.append(sheet.row_values(k))
+    list_r.append(sheet.row_values(k))
+for k in range(0,sheet.ncols):
+    list_c.append(sheet.col_values(k))
 
-for mylsit in list_j:
-    for item in range(0,len(mylsit)):
-      if mylsit[item]=="Pages":
-          print(mylsit[item+1])
-          
-          
-          
-          
-          
-          
-          
-          import xlrd
-book = xlrd.open_workbook("F:/Files/Leads.xlsx")
-sheet = book.sheet_by_index(0)
-a="Keywords"
-b=3
-r= []
-c= []
-print(sheet.nrows)
-for k in range(0,sheet.nrows):
-    r.append(sheet.row_values(k))
+for index1 in range(len(list_c)):
+    for index2 in range(len(list_c[index1])):
+        if list_c[index1][index2]==Language:
+            a=index1
 
-
-for i in r:
-    print(i)
-    print(r[b][i.index(a)])
-        
-
-
+for index1 in range(len(list_r)):
+    for index2 in range(len(list_r[index1])):
+        if list_r[index1][index2]==StringId:
+            b=index1
+print(list_r[b][a])
 
 
